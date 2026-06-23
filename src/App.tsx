@@ -1,11 +1,13 @@
-function App() {
- 
+import React from "react";
+import Navbar from "./components/Navbar";
 
+const App: React.FC = () => {
   return (
-    <>
-     <h1>HOLA</h1>
-    </>
-  )
-}
+    <div>
+      <Navbar />
+      <h1>Bienvenido</h1>
+    </div>
+  );
+};
 
-export default App
+export default App;
