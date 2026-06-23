@@ -1,17 +1,23 @@
+/* ===== NAVBAR ===== */
+
 .navbar {
+  background: #1e293b;
+  color: white;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #1f2937;
+
   padding: 15px 30px;
-  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-logo h2 {
-  margin: 0;
+.logo {
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.navbar-menu {
+.menu {
   display: flex;
   gap: 15px;
 }
@@ -19,15 +25,136 @@
 .nav-btn {
   background: #2563eb;
   color: white;
+
   border: none;
-  padding: 10px 18px;
   border-radius: 8px;
-  cursor: pointer;
+
+  padding: 10px 18px;
   font-size: 15px;
-  transition: 0.3s;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .nav-btn:hover {
   background: #1d4ed8;
   transform: translateY(-2px);
+}
+
+/* ===== MODAL ===== */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.modal-container {
+  width: 450px;
+  background: white;
+
+  border-radius: 15px;
+  overflow: hidden;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  animation: abrirModal 0.3s ease;
+}
+
+.modal-header {
+  background: #1e293b;
+  color: white;
+
+  padding: 15px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.btn-cerrar {
+  background: transparent;
+  border: none;
+  color: white;
+
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-content {
+  padding: 25px;
+  text-align: center;
+}
+
+.perfil-img {
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+  border: 4px solid #2563eb;
+
+  object-fit: cover;
+}
+
+.modal-content h3 {
+  color: #1e293b;
+  margin-top: 15px;
+}
+
+.perfil-info {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.perfil-info p {
+  margin: 10px 0;
+  color: #444;
+}
+
+.btn-modal {
+  margin-top: 20px;
+
+  padding: 10px 20px;
+
+  background: #2563eb;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-modal:hover {
+  background: #1d4ed8;
+}
+
+/* ===== ANIMACIÓN ===== */
+
+@keyframes abrirModal {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

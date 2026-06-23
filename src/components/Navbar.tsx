@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import ModalPerfil from "./ModalPerfil";
 
 const Navbar: React.FC = () => {
-  return (
-    <nav className="navbar">
-      <div className="navbar-logo">
-        <h2>Mi Tienda</h2>
-      </div>
+  const [showProfile, setShowProfile] = useState(false);
 
-      <div className="navbar-menu">
-        <button className="nav-btn">Perfil</button>
-        <button className="nav-btn">Carrito</button>
-        <button className="nav-btn">Catálogo</button>
-        <button className="nav-btn">Contactos</button>
-      </div>
-    </nav>
+  return (
+    <>
+      <nav>
+        <button onClick={() => setShowProfile(true)}>
+          Perfil
+        </button>
+
+        <button>Carrito</button>
+        <button>Catálogo</button>
+        <button>Contactos</button>
+      </nav>
+
+      <ModalPerfil
+        isOpen={showProfile}
+        onClose={() => setShowProfile(false)}
+      />
+    </>
   );
 };
 
