@@ -1,13 +1,13 @@
-import React from "react";
-import Navbar from "./components/Navbar";
+import PokemonList from "./components/PokemonList";
 
-const App: React.FC = () => {
+function App() {
   return (
     <div>
-      <Navbar />
-      <h1>Bienvenido</h1>
+      <h1>Pokédex</h1>
+
+      <PokemonList />
     </div>
   );
-};
+}
 
 export default App;
